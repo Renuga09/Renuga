@@ -1,8 +1,15 @@
    import streamlit as st
+import pandas as pd
 
-st.title("Simple Streamlit App")
+st.title("Predefined Data App")
 
-name = st.text_input("Enter your name")
+# Predefined data
+data = {
+    "Name": ["Arun", "Bala", "Charan"],
+    "Marks": [85, 90, 78]
+}
 
-if st.button("Click Me"):
-    st.write("Hello", name)
+df = pd.DataFrame(data)
+
+st.write("Student Marks")
+st.dataframe(df)
